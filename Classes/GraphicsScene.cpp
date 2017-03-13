@@ -8,7 +8,8 @@
 
 USING_NS_CC;
 
-Scene* GraphicsScene::createScene()
+Scene* GraphicsScene::
+createScene()
 {
     auto scene = Scene::create();
     auto layer = GraphicsScene::create();
@@ -39,8 +40,8 @@ bool GraphicsScene::init()
             "start_buttom_little.png",
             CC_CALLBACK_1(GraphicsScene::startGame, this));
 
-//    startGameItem->setPosition(Vec2(origin.x + visibleSize.width - startGameItem->getContentSize().width/2 ,
-//                                  origin.y + startGameItem->getContentSize().height/2));
+    startGameItem->setPosition(Vec2(origin.x + visibleSize.width - startGameItem->getContentSize().width/2 ,
+                                  origin.y + startGameItem->getContentSize().height/2));
 
     startGameItem->setPosition(Vec2(origin.x + visibleSize.width/2 ,
                                     origin.y + startGameItem->getContentSize().height/2));

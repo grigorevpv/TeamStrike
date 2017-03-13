@@ -2,6 +2,7 @@
 #include "HelloWorldScene.h"
 #include "GraphicsScene.h"
 #include "Level1Scene.h"
+#include "KeyboardEvent.h"
 
 USING_NS_CC;
 
@@ -76,7 +77,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = GraphicsScene::createScene();
+    auto scene = Level1Scene::createScene();
 
     // run
     director->runWithScene(scene);

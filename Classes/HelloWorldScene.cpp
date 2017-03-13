@@ -1,3 +1,4 @@
+#include <ui/UIButton.h>
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "PauseScene.h"
@@ -73,6 +74,25 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
+
+    auto startGameButton = ui::Button::create();
+    startGameButton->setTitleText("Play");
+    startGameButton->setColor(Color3B(0, 255, 0));
+
+    startGameButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
+        switch (type) {
+            case ui::Widget::TouchEventType::ENDED:
+                Director::getInstance()->replaceScene(PauseScene::createScene());
+                break;
+            default:
+                break;
+        }
+    });
+
+    startGameButton->setPosition(Vec2(origin.x + visibleSize.width/2,
+                                      origin.y + visibleSize.height/2));
+
+    this->addChild(startGameButton, 1);
     
     return true;
 }
