@@ -34,6 +34,7 @@ bool Level1Scene::init() {
     edgeNode->setPhysicsBody(edgeBody);
     this->addChild(edgeNode);
 
+
     auto pauseseItem = MenuItemImage::create(
             "pause_little.png",
             "pause_little.png",
